@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styleTable.css" />
+    <link rel="stylesheet" href="./styleSidebar.css" />
+    <link rel="stylesheet" href="./modals/style.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="sidebar" class="sidebar">
+        <div class="menu">
+          <div class="logo">
+            <img src="" alt="AFS Logo" />
+          </div>
+          <ul>
+            <li>
+              <a href="#" id="inicioLink"><i class="icon-inicio"></i> Início</a>
+            </li>
+            <li>
+              <a
+                href="#"
+                id="estoqueLink"
+                style="pointer-events: none; cursor: default"
+              >
+                <i class="fa fa-box"></i> Estoque
+              </a>
+            </li>
+            <ul
+              id="categoriaList"
+              style="display: none; padding-left: 20px"
+            ></ul>
+            <li>
+              <a href="#" id="pedidosLink"
+                ><i class="fa fa-shopping-cart"></i> Pedidos</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="logout">
+          <a href="../Login/index.html"><i class="icon-sair"></i> Sair</a>
+        </div>
+      </div>
+
+      <main class="main-content">
+        <header class="header">
+          <h1>Dashboard</h1>
+          <div id="perfilIcon" class="user-info">
+            <div class="user-data">
+              <span id="user-name">Julião Silva</span>
+              <span>juliasilvaaa@123.com</span>
+            </div>
+            <i class="fas fa-user-circle"></i>
+          </div>
+        </header>
+
+        <section id="overview" class="overview">
+          <h2></h2>
+          <p>Overview</p>
+          <div id="cardsContainer" class="cards"></div>
+      </section>
+
+        <section id="itemList" class="item-list" style="display: none">
+          <h2 id="categoriaTitulo">Componentes</h2>
+          <div class="menu-list">
+            <div class="search-container">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Pesquisar" />
+            </div>
+            <div class="button-new">
+              <button onclick="openModal()">Adicionar +</button>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Componente</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Data de Entrada</th>
+                <th>Data de Saída</th>
+                <th>Tipo de Movimentação</th>
+                <th>Usuário</th>
+                <th>Editar</th>
+                <th>Deletar</th>
+              </tr>
+            </thead>
+            <tbody id="itemTableBody"></tbody>
+          </table>
+        </section>
+
+        <section id="orderList" class="order-list" style="display: none">
+          <h2>Pedidos</h2>
+          <div class="menu-list">
+            <div class="search-container">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Pesquisar" />
+            </div>
+            <div class="button-new">
+              <button onclick="openCreateOrderModal()">
+                Adicionar Pedido +
+              </button>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Nome do Fornecedor</th>
+                <th>Data do Pedido</th>
+                <th>Status</th>
+                <th>Tipo de Pedido</th>
+                <th>Quantidade</th>
+                <th>Nome do Produto</th>
+                <th>Editar</th>
+                <th>Deletar</th>
+              </tr>
+            </thead>
+            <tbody id="orderTableBody"></tbody>
+          </table>
+        </section>
+
+        <section id="profileSection" style="display: none">
+          <div class="submenu">
+            <button id="perfilTab" class="active">Perfil</button>
+            <button id="segurancaTab">Segurança</button>
+          </div>
+
+          <div id="perfilContent">
+            <form>
+              <div class="form">
+                <div>
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="inputs">
+                  <div class="label">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" value="Julião Silva" />
+                  </div>
+                  
+                  <div class="label">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" value="juliasilvaaa@123.com" />
+                  </div>
+                  
+                  <div class="label">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" value="********" disabled/>
+                  </div>
+
+                  <div class="label">
+                    <label for="cargo">Cargo:</label>
+                    <input type="text" id="cargo" value="Admin" disabled/>
+                  </div>
+                </div>
+              </div>
+                <button type="submit">Salvar</button>
+            </form>
+          </div>
+
+          <div id="segurancaContent" style="display: none">
+            <h2>Segurança</h2>
+            <form>
+              <div class="inputs">
+
+                <div class="label">
+                  
+                  <label for="senhaAtual">Sua senha:</label>
+                  <input
+                  type="password"
+                  id="senhaAtual"
+                  placeholder="Digite sua senha atual"
+                  />
+                </div>
+                
+                <div class="label">
+                  
+                  <label for="novaSenha">Nova senha:</label>
+                  <input
+                  type="password"
+                  id="novaSenha"
+                  placeholder="Digite nova senha"
+                  />
+                </div>
+              </div>
+                
+              <button type="submit">Salvar</button>
+            </form>
+          </div>
+        </section>
+
+        <div id="modalContainer"></div>
+      </main>
+    </div>
+    <div id="toast" class="toast"></div>
+
+    <script src="./scripts/data.js" type="module"></script>
+    <script src="./scripts/modal.js" type="module"></script>
+    <script src="./scripts/ui.js" type="module"></script>
+    <script src="./scripts/event.js" type="module"></script>
+    <script src="./scripts/main.js" type="module"></script>
+  </body>
+</html>

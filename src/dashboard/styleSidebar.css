@@ -1,0 +1,51 @@
+.sidebar {
+    width: 190px;
+    background-color: #004d00;
+    padding-top: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+}
+
+.sidebar ul li a:hover {
+    background-color: #006400; /* Cor ao passar o mouse */
+}
+
+.sidebar .logout {
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar .logout a {
+    text-decoration: none;
+    color: #ff4d4d; /* Cor do texto do logout */
+}
+
+.sidebar .logout a:hover {
+    background-color: #cc0000;
+}

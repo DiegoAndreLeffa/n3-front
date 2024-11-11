@@ -1,0 +1,30 @@
+<div id="editOrderModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('editOrderModal')">&times;</span>
+      <h2>Editar Pedido</h2>
+      <form id="editOrderForm">
+        <label for="editFornecedor">Fornecedor:</label>
+        <input type="text" id="editFornecedor" name="fornecedor" required />
+  
+        <label for="editDataPedido">Data do Pedido:</label>
+        <input type="date" id="editDataPedido" name="dataPedido" required />
+  
+        <label for="editTipoPedido">Tipo de Pedido:</label>
+        <select id="editTipoPedido" name="tipoPedido" required>
+          <option value="Compra">Compra</option>
+          <option value="Venda">Venda</option>
+        </select>
+  
+        <label for="editQuantidade">Quantidade:</label>
+        <input type="number" id="editQuantidade" name="quantidade" required />
+  
+        <label for="editNomeProduto">Nome do Produto:</label>
+        <input type="text" id="editNomeProduto" name="nomeProduto" required />
+  
+        <div class="modal-buttons">
+          <button type="button" onclick="closeModal('editOrderModal')">Cancelar</button>
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>

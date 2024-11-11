@@ -1,0 +1,30 @@
+<div id="createOrderModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('createOrderModal')">&times;</span>
+      <h2>Adicionar Pedido</h2>
+      <form id="createOrderForm">
+        <label for="createFornecedor">Fornecedor:</label>
+        <input type="text" id="createFornecedor" name="fornecedor" required />
+  
+        <label for="createDataPedido">Data do Pedido:</label>
+        <input type="date" id="createDataPedido" name="dataPedido" required />
+  
+        <label for="createTipoPedido">Tipo de Pedido:</label>
+        <select id="createTipoPedido" name="tipoPedido" required>
+          <option value="Compra">Compra</option>
+          <option value="Venda">Venda</option>
+        </select>
+  
+        <label for="createQuantidade">Quantidade:</label>
+        <input type="number" id="createQuantidade" name="quantidade" required />
+  
+        <label for="createNomeProduto">Nome do Produto:</label>
+        <input type="text" id="createNomeProduto" name="nomeProduto" required />
+  
+        <div class="modal-buttons">
+          <button type="button" onclick="closeModal('createOrderModal')">Cancelar</button>
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>

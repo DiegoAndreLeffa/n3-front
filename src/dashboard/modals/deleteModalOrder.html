@@ -1,0 +1,12 @@
+<div id="deleteOrderModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('deleteOrderModal')">&times;</span>
+      <h2>Confirmar Exclusão</h2>
+      <p>Tem certeza de que deseja excluir este pedido?</p>
+      <div id="deleteOrderInfo" style="font-weight: bold; margin-bottom: 15px;"></div>
+      <div class="modal-buttons">
+        <button type="button" onclick="closeModal('deleteOrderModal')">Cancelar</button>
+        <button type="button" onclick="confirmDeleteOrder()">Excluir</button>
+      </div>
+    </div>
+  </div>
